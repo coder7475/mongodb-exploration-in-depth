@@ -164,9 +164,8 @@ db.test.find(
 )
 ```
 
-!https://www.mongodb.com/docs/manual/assets/link.svg
-
-The `[$or](https://www.mongodb.com/docs/manual/reference/operator/query/or/#mongodb-query-op.-or)` operator has the following syntax:
+***$or***
+The `[$or]` operator has the following syntax:
 
 ```jsx
 {$or: [ { <expression1> }, { <expression2> }, ... , { <expressionN> } ] }
