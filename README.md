@@ -274,3 +274,15 @@ The **$size** operator matches any array with the number of elements specified b
 ```jsx
 db.collection.find( { field: { $size: <num> } } );
 ```
+
+The `$all` operator selects the documents where the value of a field is an array that contains all the specified elements.
+
+```jsx
+{ <field>: { $all: [ <value1> , <value2> ... ] } }
+```
+
+The `$elemMatch` operator matches documents that contain an array field with at least one element that matches all the specified query criteria.
+
+```jsx
+{ <field>: { $elemMatch: { <query1>, <query2>, ... } } }
+```
