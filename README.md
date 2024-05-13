@@ -1,3 +1,4 @@
+## Module 5
 # Mongosh Commands
 
 **Open Mongosh shell**
@@ -286,3 +287,92 @@ The `$elemMatch` operator matches documents that contain an array field with a
 ```jsx
 { <field>: { $elemMatch: { <query1>, <query2>, ... } } }
 ```
+
+# Update
+
+[db.collection.update()](https://www.mongodb.com/docs/manual/reference/method/db.collection.update/)
+
+**Syntax:**
+
+```jsx
+db.collection.update(query, update, options)
+db.collection.update(
+   <query>,
+   <update>,
+   {
+     upsert: <boolean>,
+     multi: <boolean>,
+     writeConcern: <document>,
+     collation: <document>,
+     arrayFilters: [ <filterdocument1>, ... ],
+     hint:  <document|string>,
+     let: <document> // Added in MongoDB 5.0
+   }
+)
+```
+
+# Update Operators
+
+## Field Update Operators
+
+[Field Update Operators](https://www.mongodb.com/docs/manual/reference/operator/update-field/)
+
+| Name  | Description |
+| --- | --- |
+| $set | Sets the value of a field in a document. |
+| $unset | Removes the specified field from a document. |
+
+$set syntax
+
+```jsx
+{ $set: { <field1>: <value1>, ... } }
+```
+
+## Array Operators
+
+| Name  | Description |
+| --- | --- |
+| $addToSet | Adds elements to an array only if they do not already exist in the set. |
+| $push | Adds an item to an array. |
+| $pop | Removes the first or last item of an array.
+ |
+| $pull | Removes all array elements that match a specified query. |
+| $pullAll | Removes all matching values from an array. |
+| $ | Acts as a placeholder to update the first element that matches the query condition. |
+|  |  |
+
+[$ (update)](https://www.mongodb.com/docs/manual/reference/operator/update/positional/#mongodb-update-up.-)
+
+## Array Modifiers
+
+| Name | Description |
+| --- | --- |
+| $each | Modifies the https://www.mongodb.com/docs/manual/reference/operator/update/push/#mongodb-update-up.-push and https://www.mongodb.com/docs/manual/reference/operator/update/addToSet/#mongodb-update-up.-addToSet operators to append multiple items for array updates. |
+|  |  |
+
+## Fields
+
+| Name | Description |
+| --- | --- |
+| $inc | Increments the value of the field by the specified amount. |
+|  |  |
+
+# Delete Document
+
+[Delete Documents](https://www.mongodb.com/docs/mongodb-shell/crud/delete/)
+
+# Drop Collection
+
+Syntax
+
+```jsx
+db.collection.drop( { writeConcern: <document> } )
+```
+
+[db.collection.drop()](https://www.mongodb.com/docs/manual/reference/method/db.collection.drop/)
+
+---
+
+---
+
+———————————————————
