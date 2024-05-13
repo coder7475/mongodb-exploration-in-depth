@@ -20,7 +20,7 @@ db.test
     .find({ skills: [] })
     .projection({ skills: 1 })
 ```
-## 4. Find documents where the person has skills in both "JavaScript" and "Java."
+### 4. Find documents where the person has skills in both "JavaScript" and "Java."
 ***Solution***
 ```bash 
 db.test
