@@ -21,9 +21,13 @@ db.test.aggregate([
           gender: 1, course: 1, edTech: 1
         }
     },
-    // out collection
+    // ? out a nwq collection
+    // {
+    //     $out: "courses-students"
+    // }
+    // * Merge to an old colleciton
     {
-        $out: "courses-students"
+        $merge: "test"
     }
 ])
 // $addField does not modify the actual database
