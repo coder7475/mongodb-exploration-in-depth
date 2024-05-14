@@ -11,12 +11,15 @@ db.test.aggregate([
     // $addFields
     {
         $addFields: {
-          course: "Level-2"
+          course: "Level-2",
+          edTech: "Programming Hero"
         }
     },
     {
         $project: {
-          gender: 1, course: 1
+          gender: 1, course: 1, edTech: 1
         }
     }
 ])
+// $addField does not modify the actual database
+// db.test.find({ }).projection({ course: 1 })
