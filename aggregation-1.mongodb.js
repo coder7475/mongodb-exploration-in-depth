@@ -15,10 +15,15 @@ db.test.aggregate([
           edTech: "Programming Hero"
         }
     },
+    // projection
     {
         $project: {
           gender: 1, course: 1, edTech: 1
         }
+    },
+    // out collection
+    {
+        $out: "courses-students"
     }
 ])
 // $addField does not modify the actual database
