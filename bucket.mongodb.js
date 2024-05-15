@@ -20,5 +20,9 @@ db.test.aggregate([
         $sort: {
           count: -1 // sort by desending order
         }
+    },
+    // limit
+    {
+        $limit: 2
     }
 ])
