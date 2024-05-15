@@ -10,10 +10,19 @@ db.test.aggregate([
   {
     $group: {
         _id: "$age",
+        // accumulators
         // find number of document in a group
         count: { $sum: 1 },
         // $push operator
-        amakeDekaoPuraDoc: { $push: "$$ROOT"}
+        fullDoc: { $push: "$$ROOT"}
     }
-  }  
+  } ,
+  // stage - 2
+  {
+    $project: {
+      "fullDoc.name": 1,
+      "fullDoc.email": 1,
+      "fullDoc.phone": 1,
+    }
+  } 
 ])
