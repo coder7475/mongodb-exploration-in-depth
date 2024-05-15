@@ -14,10 +14,14 @@ db.test.aggregate([
     {
       $unwind: "$friends"
     },
+    // group
+    {
+      $group: { _id: "$friends", count: { $sum: 1 }}
+    },
     // projection
     {
         $project: {
-          name: 1, age: 1, friends: 1
+          count: 1
         }
     }
 ])
