@@ -11,7 +11,9 @@ db.test.aggregate([
     $group: {
       _id: "$age",
       // find number of document in a group
-      count: { $sum: 1 }
+      //   count: { $sum: 1 }
+      // $push operator
+      amakeDekaoNam: { $push: "$name"}
     }
   }  
 ])
