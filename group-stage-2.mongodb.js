@@ -1,5 +1,6 @@
 /**
- * Lear $group operatores: $sum, $max, $min, $avg 
+ * Learn $group operatores: $sum, $max, $min, $avg 
+ * $project: $subtract
  */
 use("practice")
 
@@ -12,6 +13,14 @@ db.test.aggregate([
             maxSalary: { $max: "$salary" },
             minSalary: { $min: "$salary" },
             avgSalary: { $avg: "$salary" },
+        }
+    },
+    // project
+    {
+        $project: {
+          totalSalary: 1,
+          averageSalary: "$avgSalary",
+          range: { $subtract: ["$maxSalary", "$minSalary"]}
         }
     }
 ])
