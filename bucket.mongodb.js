@@ -14,5 +14,11 @@ db.test.aggregate([
             }
           }
         }
+    },
+    // sort
+    {
+        $sort: {
+          count: -1 // sort by desending order
+        }
     }
 ])
