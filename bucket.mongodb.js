@@ -9,6 +9,9 @@ db.test.aggregate([
           default: "Greater than 80",
           output: {
             count: { $sum: 1 }, 
+            peoples: {
+                $push: "$name"
+            }
           }
         }
     }
