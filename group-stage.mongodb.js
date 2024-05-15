@@ -9,11 +9,11 @@ db.test.aggregate([
   // stage - 1
   {
     $group: {
-      _id: "$age",
-      // find number of document in a group
-      //   count: { $sum: 1 }
-      // $push operator
-      amakeDekaoNam: { $push: "$name"}
+        _id: "$age",
+        // find number of document in a group
+        count: { $sum: 1 },
+        // $push operator
+        amakeDekaoPuraDoc: { $push: "$$ROOT"}
     }
   }  
 ])
