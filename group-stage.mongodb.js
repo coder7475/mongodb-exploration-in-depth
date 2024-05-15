@@ -9,7 +9,9 @@ db.test.aggregate([
   // stage - 1
   {
     $group: {
-      _id: "$address.country",
+      _id: "$age",
+      // find number of document in a group
+      count: { $sum: 1 }
     }
   }  
 ])
