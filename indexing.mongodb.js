@@ -16,7 +16,7 @@ use("practice")
 // db.massive.createIndex({ email: 1 })
 
 // drop index
-db.massive.dropIndex({ email: 1 })
+// db.massive.dropIndex({ email: 1 })
 
 // IXSCAN
 db.massive.find({
