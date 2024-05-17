@@ -9,6 +9,7 @@
 use("practice")
 
 db.massive.aggregate([
+    // stage 1 
     {
         $project: {
           company: 1,
@@ -21,6 +22,7 @@ db.massive.aggregate([
           },    
         }
     },
+    // stage - 2
     {
         $group: {
           _id: "$company",
@@ -32,6 +34,12 @@ db.massive.aggregate([
                 }
             }
           }
+        }
+    },
+    // stage - 3
+    {
+        $sort: {
+            totalBalance: -1
         }
     }
 ])
