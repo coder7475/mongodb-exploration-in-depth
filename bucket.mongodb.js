@@ -5,7 +5,7 @@ db.test.aggregate([
     {
         $bucket: {
           groupBy: "$age",
-          boundaries: [ 20, 40, 60, 80 ],
+          boundaries: [20, 40, 60, 80 ],
           default: "Greater than 80",
           output: {
             count: { $sum: 1 }, 
