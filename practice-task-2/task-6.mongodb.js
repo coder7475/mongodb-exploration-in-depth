@@ -11,7 +11,7 @@ use("practice")
 db.massive.aggregate([
     {
         $project: {
-          balance: 1,
+          company: 1,
           new_balance: {
             $substr: ["$balance", 1, {
                 $subtract: [
@@ -21,12 +21,17 @@ db.massive.aggregate([
           },    
         }
     },
-    // {
-    //     $group: {
-    //       _id: "$company",
-    //       totalBalance: {
-    //         $sum: "$balance"
-    //       }
-    //     }
-    // }
+    {
+        $group: {
+          _id: "$company",
+          totalBalance: {
+            $sum: {
+                $convert: {
+                    input: "$new_balance",
+                    to: "double"
+                }
+            }
+          }
+        }
+    }
 ])
