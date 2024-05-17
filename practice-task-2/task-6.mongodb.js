@@ -41,5 +41,9 @@ db.massive.aggregate([
         $sort: {
             totalBalance: -1
         }
+    },
+    // stage - 4
+    {
+        $limit: 2
     }
 ])
